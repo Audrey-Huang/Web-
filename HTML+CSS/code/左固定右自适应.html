@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            方案1：box1设置为浮动，box2的左边距为box1的长度
+        */
+        /* .box1{
+            width: 200px;
+            height: 200px;
+            float: left;
+            background-color: antiquewhite;
+        }
+        .box2{
+            height: 200px;
+            padding-left: 200px;
+            background-color: aqua;
+        } */
+        /*
+            方案2: 将父元素设置为flex，自适应元素的flex-grow设置为1
+        */
+        body{
+            display: flex;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            /* float: left; */
+            background-color: antiquewhite;
+        }
+        .box2{
+            height: 200px;
+            flex-grow: 1;
+            background-color: aqua;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>

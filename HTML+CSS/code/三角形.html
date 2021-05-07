@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* <!--画圆形--> */
+        .box1{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: turquoise;
+        }
+        /* <!--画椭圆--> */
+        .box2{
+            width: 200px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: violet;
+        }
+        /*画上三角形*/
+        .box3{
+            width: 0;
+            height: 0;
+            /*将不需要的三角形设置为透明，留下需要的就好了*/
+            border:50px solid transparent;
+            border-bottom: 50px solid rebeccapurple;
+        }
+        /*画下三角形*/
+        .box4{
+            width: 0;
+            height: 0;
+            /*将不需要的三角形设置为透明，留下需要的就好了*/
+            border:50px solid transparent;
+            border-top: 50px solid greenyellow;
+        }
+        .box5{
+            width: 0;
+            height: 0;
+            /*将三角形的圆角设置为50%即为扇形*/
+            border:50px solid transparent;
+            border-top: 50px solid greenyellow;
+            border-radius: 50%;
+        }
+        .box6{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: honeydew;
+            box-shadow: 0 0 0 10px rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    <div class="box6">
+    </div>
+</body>
+</html>

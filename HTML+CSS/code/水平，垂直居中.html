@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*方案1：通过设置父元素display：flex，justify-content：center，align-item：center*/
+        /*主轴换成了列排序*/
+        /* .container{
+            width: 100vw;
+            height: 100vh;
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            justify-content: center;
+        } */
+        /* .box1{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(204, 125, 28);
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color:darkcyan;
+        } */
+        /*方案2：通过position设置子元素相对父元素的定位,父元素设置为relative，子元素设置为absolute，同时子元素的top，bottom，right，left全为0，margin为auto*/
+        .box1{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(204, 125, 28);
+            position: relative;
+        }
+        .box2{
+            width: 50%;
+            height: 50%;
+            background-color: blueviolet;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        .box3{
+            width: 50%;
+            height: 50%;
+            background-color:darkcyan;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div> -->
+    <div class="box1">
+        <div class="box2">
+            <div class="box3"></div>
+        </div>
+    </div>
+</body>
+</html>

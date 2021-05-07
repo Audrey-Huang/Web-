@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+    <style lang="less" scoped>
+        /* // 弹窗动画 */
+        .dialog-enter-active,
+        .dialog-leave-active {
+            transition: opacity .5s;
+        }
+        
+        .dialog-enter,
+        .dialog-leave-to {
+            opacity: 0;
+        }
+        
+        /* // 最外层 设置position定位 
+        // 遮罩 设置背景层，z-index值要足够大确保能覆盖，高度 宽度设置满 做到全屏遮罩 */
+        .dialog {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            /* // 内容层 z-index要比遮罩大，否则会被遮盖 */
+            .dialog-mark {
+                position: absolute;
+                top: 0;
+                height: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, .6);
+            }
+            .dialog-sprite {
+                /* // 移动端使用felx布局 */
+                position: absolute;
+                top: 10%;
+                left: 15%;
+                right: 15%;
+                bottom: 25%;
+                display: flex;
+                flex-direction: column;
+                max-height: 75%;
+                min-height: 180px;
+                overflow: hidden;
+                z-index: 23456765435;
+                background: #fff;
+                border-radius: 8px;
+                .header {
+                    padding: 15px;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 700;
+                    color: #333;
+                }
+                .dialog-body {
+                    flex: 1;
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                    padding: 0 15px 20px 15px;
+                }
+                .dialog-footer {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    // flex-shrink: 1;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 1px;
+                        background: #ddd;
+                        transform: scaleY(.5);
+                    }
+                    .btn {
+                        flex: 1;
+                        text-align: center;
+                        padding: 15px;
+                        font-size: 17px;
+                        &:nth-child(2) {
+                            position: relative;
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 1px;
+                                height: 100%;
+                                background: #ddd;
+                                transform: scaleX(.5);
+                            }
+                        }
+                    }
+                    .btn-confirm {
+                        color: #43ac43;
+                    }
+                }
+            }
+        }
+    </style> 
+</head>
+<body>
+    <template>
+        <div class="dialog">
+            <div class="dialog-mark"></div>
+            <transition name="dialog">
+                <div class="dialog-sprite">
+                    <!-- 标题 -->
+                    <section v-if="title" class="header">临时标题</section>
+        
+                    <!-- 弹窗的主题内容 -->
+                    <section class="dialog-body">
+                        临时内容
+                    </section>
+        
+                    <!-- 按钮 -->
+                    <section class="dialog-footer">
+                        <div class="btn btn-confirm">确定</div>
+                    </section>
+                </div>
+            </transition>
+        </div>
+    </template>
+    
+    <script>
+        export default {
+            data(){
+                return {}
+            }
+        }
+    </srcipt>   
+</body>
+</html>
