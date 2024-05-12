@@ -10,6 +10,6 @@ function throttle(fn,delay){
         timer=setTimeout(function(){
             fn.apply(_this,args);
             clearTimeout(timer);
-        })
+        },delay)
     }
 }
